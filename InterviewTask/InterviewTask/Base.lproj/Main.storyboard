@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gZF-yZ-9dZ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Todo List-->
+        <scene sceneID="zkB-E4-kPA">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qLH-OQ-a9L" customClass="ViewController" customModule="InterviewTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qv1-2j-pHb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Eok-Xc-gyK">
+                                <rect key="frame" x="20" y="140" width="374" height="722"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="etz-HW-h40">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
+                                        <color key="backgroundColor" red="0.92549020049999997" green="0.92549020049999997" blue="0.92549020049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="y65-BM-Jng"/>
+                                        </constraints>
+                                        <color key="barTintColor" red="0.92549020049999997" green="0.92549020049999997" blue="0.92549020049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="qLH-OQ-a9L" id="oDb-j7-l4Q"/>
+                                        </connections>
+                                    </searchBar>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="33c-63-gp4">
+                                        <rect key="frame" x="0.0" y="60" width="374" height="662"/>
+                                        <color key="backgroundColor" red="0.92549020049999997" green="0.92549020049999997" blue="0.92549020049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="qLH-OQ-a9L" id="9mg-19-hY5"/>
+                                            <outlet property="delegate" destination="qLH-OQ-a9L" id="haM-br-nSX"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="etz-HW-h40" firstAttribute="leading" secondItem="Eok-Xc-gyK" secondAttribute="leading" id="2ub-xx-fSB"/>
+                                    <constraint firstAttribute="trailing" secondItem="etz-HW-h40" secondAttribute="trailing" id="H1f-k5-66P"/>
+                                    <constraint firstItem="etz-HW-h40" firstAttribute="top" secondItem="Eok-Xc-gyK" secondAttribute="top" id="ekO-HX-isw"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92549020049999997" green="0.92549020049999997" blue="0.92549020049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Eok-Xc-gyK" firstAttribute="leading" secondItem="qv1-2j-pHb" secondAttribute="leadingMargin" id="ZXJ-Wz-Ybp"/>
+                            <constraint firstItem="Eok-Xc-gyK" firstAttribute="top" secondItem="aNo-wi-cWJ" secondAttribute="top" id="baV-kl-OpN"/>
+                            <constraint firstItem="aNo-wi-cWJ" firstAttribute="bottom" secondItem="Eok-Xc-gyK" secondAttribute="bottom" id="i7E-RK-We3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Eok-Xc-gyK" secondAttribute="trailing" id="pR6-pR-sF9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aNo-wi-cWJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Todo List" id="vQN-qI-bgf">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="KgY-vi-0Zo"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add" style="done" id="y6A-y0-hi4">
+                            <color key="tintColor" red="0.37310452399999999" green="0.62366908850000002" blue="0.78161805870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="onPlusTapped" destination="qLH-OQ-a9L" id="dut-ph-fRk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="etz-HW-h40" id="w4E-Fr-ZuO"/>
+                        <outlet property="tableView" destination="33c-63-gp4" id="SDS-aQ-ICf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2kl-nR-sR0" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1473.913043478261" y="98.4375"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oqy-KL-Usa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gZF-yZ-9dZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="wpe-0v-5Lx">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qLH-OQ-a9L" kind="relationship" relationship="rootViewController" id="kJ7-pb-5ZH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="945-Ne-ZWT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="563.768115942029" y="98.4375"/>
+        </scene>
+    </scenes>
+</document>
